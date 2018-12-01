@@ -1,5 +1,9 @@
 package example.gabo.com.testapp;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -14,6 +18,8 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -59,7 +65,7 @@ public class DatabaseScreen extends AppCompatActivity implements ExternTables.On
     private SensorEventListener gyroEventListener;
 
     private Vibrator v;
-
+    public static String CHANNEL_ID = "example.gabo.com.testapp.ChannelID";
     @Override
     public void onFragmentInteraction(Uri uri){ }
 
@@ -81,6 +87,7 @@ public class DatabaseScreen extends AppCompatActivity implements ExternTables.On
 
         externTable = new ExternTables();
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        createNotificationChannel();
 
         ft.add(R.id.externalContainer,externTable);
         ft.commit();
@@ -101,7 +108,7 @@ public class DatabaseScreen extends AppCompatActivity implements ExternTables.On
                     //getWindow().getDecorView().setBackgroundColor(Color.WHITE);
                 }*/
 
-                if (event.values[2] < -2.0f) {
+                if (event.values[2] < -5.0f) {
                     //getWindow().getDecorView().setBackgroundColor(Color.YELLOW);
                     goRight();
                 }
@@ -191,8 +198,9 @@ public class DatabaseScreen extends AppCompatActivity implements ExternTables.On
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
+
                 try {
-                    URL url = new URL("http://192.168.1.67/movies/android.php");
+                    URL url = new URL("http://172.20.10.2/movies/android.php");
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("POST");
                     conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
@@ -207,7 +215,6 @@ public class DatabaseScreen extends AppCompatActivity implements ExternTables.On
 
                     os.flush();
                     os.close();
-
                     InputStream is = new BufferedInputStream(conn.getInputStream());
                     String s = readStream(is);
 
@@ -216,7 +223,9 @@ public class DatabaseScreen extends AppCompatActivity implements ExternTables.On
                     Log.i("RESPONSE",s);
 
 
+
                     conn.disconnect();
+                    doNotification(conn.getResponseMessage());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -239,13 +248,48 @@ public class DatabaseScreen extends AppCompatActivity implements ExternTables.On
         }
     }
 
+    void doNotification(String reply){
+        String ans2 = "";
+        if(reply.equals("OK"))
+            ans2="Jolly Good Mate! The Future is upon us! The data has been exported succesfully!";
+        else
+            ans2 = "Bloody disaster Mate! The data could not be exported successfully!";
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, CHANNEL_ID);
+        notificationBuilder.setAutoCancel(true)
+                .setDefaults(Notification.DEFAULT_ALL)
+                .setWhen(System.currentTimeMillis())
+                .setSmallIcon(R.drawable.ic_launcher_background)
+                .setTicker("Hearty365")
+                .setPriority(Notification.PRIORITY_MAX) // this is deprecated in API 26 but you can still use for below 26. check below update for 26 API
+                .setContentTitle("Fly-Vic_app")
+                .setContentText(ans2)
+                .setContentInfo("Info");
+
+        NotificationManager notificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(1, notificationBuilder.build());
+
+    }
 
 
-
-
-
-
-
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = CHANNEL_ID;
+            String description = "My Channel";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
 
 
 

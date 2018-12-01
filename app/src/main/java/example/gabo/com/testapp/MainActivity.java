@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
         Cursor cursor = controller.selectUsers(UserEntry.COLUMN_PASS+"=? AND "+UserEntry.COLUMN_PASS+"=?", args);
         if(!cursor.equals(null)) {
             Log.d("Login", "Valid");
-            Intent newActivity = new Intent(this, DatabaseScreen.class); //cambia la screen a la de databaseScreen
+            Intent newActivity = new Intent(this, LockScreen.class); //cambia la screen a la de databaseScreen
             //String value = ""+myText.getText();
             //newActivity.putExtra(MESSAGE_ID, value);
             startActivity(newActivity);
