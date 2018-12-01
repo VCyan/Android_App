@@ -53,22 +53,7 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
     public void buttonClicked(View view){
         menuFragment.doAction(this);
     }
-/*
-    public void buttonClicked(View view)
-    {
-        Log.d("Database App", "Hey. clicked!");
 
-        Intent newActivity = new Intent(this, DatabaseScreen.class); //cambia la screen a la de databaseScreen
-
-        EditText myText = (EditText)findViewById(R.id.editText); // R tiene toda la info de de los id
-        EditText pwd = findViewById(R.id.pwdField);
-        String value = myText.getText().toString();
-        String pass = pwd.getText().toString();
-        //String value = ""+myText.getText();
-        newActivity.putExtra(MESSAGE_ID, value);
-        startActivity(newActivity);
-    }
-*/
     public void createUser(View view){
 
         UserEntry usr = new UserEntry();
@@ -113,32 +98,4 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
         trans.commit();
         //ReminderService.sendNotificationAndSleep(this.getApplicationContext(),"Notification to be sent");
     }
-/*
-    public void sendNotification(String message){
-        Log.d("Reminder Service", "Received message: " + message);
-
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
-
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, MainActivity.CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
-                .setContentTitle("Title of notification")
-                .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText("2 messsages " ))
-                .setContentText("dfdsfdsfasdf")
-                .setContentIntent(pendingIntent)
-                .setAutoCancel(true)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-        notificationManager.notify(1200, mBuilder.build());
-    }
-*/
-
-
-
-
-
-
 }

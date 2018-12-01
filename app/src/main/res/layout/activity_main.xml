@@ -50,14 +50,6 @@
         android:layout_height="wrap_content"
         android:onClick="createUser"
         android:text="@string/createUser" />
-<!--
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="startService"
-        android:text="Start Service" />
--->
 
     <FrameLayout
         android:id="@+id/fragmentContainer"
