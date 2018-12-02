@@ -58,7 +58,7 @@ public class DeleteFishScreen extends AppCompatActivity{
         FishEntry fisho = new FishEntry();
         Log.d("database","fishy y arg"+arg[0]);
         Cursor cursor = controller.selectFishes(selection,arg);
-        if(cursor != null) {
+        if(cursor.getCount() > 0) {
             cursor.moveToFirst();
             String name = cursor.getString(cursor.getColumnIndex(FishEntry.COLUMN_NAME));
             String amount = cursor.getString(cursor.getColumnIndex(FishEntry.COLUMN_AMOUNT));

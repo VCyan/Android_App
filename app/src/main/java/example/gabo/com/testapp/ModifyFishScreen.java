@@ -99,7 +99,7 @@ public class ModifyFishScreen extends AppCompatActivity{
         String[] arg ={nameToSearch.getText().toString()};
         Log.d("DEBUG,"," arg:"+arg[0]);
         Cursor cursor = controller.selectFishes(FishEntry.COLUMN_NAME+"=?",arg);
-        if(cursor != null) {
+        if(cursor.getCount() > 0) {
             cursor.moveToFirst();
             String name = cursor.getString(cursor.getColumnIndex(FishEntry.COLUMN_NAME));
             String amount = cursor.getString(cursor.getColumnIndex(FishEntry.COLUMN_AMOUNT));
