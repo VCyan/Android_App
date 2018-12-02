@@ -38,7 +38,7 @@ public class LockScreen extends AppCompatActivity {
                     Toast.makeText(LockScreen.this, "Welcome back!", Toast.LENGTH_LONG).show();
                     openApp();
                 }else{
-                    Toast.makeText(LockScreen.this, "Incorrect password", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LockScreen.this, "Incorrect Pattern", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -50,9 +50,7 @@ public class LockScreen extends AppCompatActivity {
     }
 
     public void openApp(){
-        Intent newActivity = new Intent(this, DatabaseScreen.class); //cambia la screen a la de databaseScreen
-        //String value = ""+myText.getText();
-        //newActivity.putExtra(MESSAGE_ID, value);
+        Intent newActivity = new Intent(this, DatabaseScreen.class); // Cambia la screen a la de databaseScreen
         startActivity(newActivity);
     }
 }

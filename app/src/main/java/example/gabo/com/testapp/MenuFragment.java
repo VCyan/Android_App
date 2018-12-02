@@ -41,7 +41,7 @@ public class MenuFragment extends Fragment {
     public void doAction(Activity activity){
         Log.d("Database App", "Hey. clicked!");
 
-        Intent newActivity = new Intent(activity, DatabaseScreen.class); //cambia la screen a la de databaseScreen
+        Intent newActivity = new Intent(activity, DatabaseScreen.class); // Cambia la screen a la de databaseScreen
 
         EditText myText = (EditText)activity.findViewById(R.id.editText); // R tiene toda la info de de los id
         EditText pwd = activity.findViewById(R.id.pwdField);
