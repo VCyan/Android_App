@@ -1,36 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/tf_location"
-        android:layout_width="200dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/editText_Location"
-        android:inputType="textPersonName" />
+        android:orientation="horizontal"
+        android:weightSum="4">
 
-    <Button
-        android:id="@+id/search_button"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="0dp"
-        android:onClick="searchPlace"
-        android:text="@android:string/search_go" />
+        <EditText
+            android:id="@+id/tf_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:ems="10"
+            android:hint="@string/editText_Location"
+            android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/movies_button"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="6dp"
-        android:layout_toEndOf="@+id/tf_location"
-        android:onClick="searchPlace"
-        android:text="@string/movies" />
+        <Button
+            android:id="@+id/movies_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:onClick="searchPlace"
+            android:text="@string/movies" />
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_weight="1"
+            android:onClick="searchPlace"
+            android:text="@android:string/search_go" />
+    </LinearLayout>
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:map="http://schemas.android.com/apk/res-auto"
@@ -38,9 +45,6 @@
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/tf_location"
-        tools:context=".MapsActivity" />
+        android:layout_height="match_parent" />
 
-</RelativeLayout>
+</LinearLayout>
