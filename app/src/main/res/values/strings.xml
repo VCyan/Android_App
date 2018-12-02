@@ -28,7 +28,7 @@
     <string name="editText_Password">Password...</string>
     <string name="buttonLogin">Login</string>
     <string name="buttonSignUp">Sign Up</string>
-    <string name="tyrLogin">Intentos Restantes:</string>
+    <string name="tyrLogin">Remaining attempts:</string>
     <string name="tryLeft">5</string>
 
 
