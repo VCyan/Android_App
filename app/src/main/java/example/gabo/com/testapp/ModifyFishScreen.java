@@ -12,7 +12,6 @@ public class ModifyFishScreen extends AppCompatActivity{
 
     FishDatabaseController controller;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
