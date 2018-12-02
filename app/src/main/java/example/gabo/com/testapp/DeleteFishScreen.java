@@ -13,7 +13,6 @@ public class DeleteFishScreen extends AppCompatActivity{
 
     FishDatabaseController controller;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +24,7 @@ public class DeleteFishScreen extends AppCompatActivity{
 
         String[] arg = {getIntent().getStringExtra("id")};
         FishEntry fishtemp = searchNameFish(FishEntry.COLUMN_ID+"=?",arg);
-        ((TextView)(findViewById(R.id.speciesInput))).setText(fishtemp.getSpecies());;
+        ((TextView)findViewById(R.id.speciesInput)).setText(fishtemp.getSpecies());;
         ((TextView)findViewById(R.id.amountInput)).setText(Float.toString(fishtemp.getAmount()));
         ((TextView)findViewById(R.id.searchNameField)).setText(fishtemp.getName());
     }

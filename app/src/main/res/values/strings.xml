@@ -11,7 +11,7 @@
     <string name="amount">Score: </string>
     <string name="species">Language: </string>
     <string name="modify">Modify</string>
-    <string name="borrar">Borrar</string>
+    <string name="borrar">Delete</string>
     <string name="add">Add</string>
     <string name="agregar">Add Movie</string>
     <string name="back">Back</string>
