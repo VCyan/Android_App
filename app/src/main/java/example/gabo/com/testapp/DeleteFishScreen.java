@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DeleteFishScreen extends AppCompatActivity{
 
@@ -72,6 +73,10 @@ public class DeleteFishScreen extends AppCompatActivity{
             fisho.setId(Integer.parseInt(id));
             return fisho;
         }
+        else
+        {
+            Toast.makeText(this, "No movie found...", Toast.LENGTH_SHORT);
+        }
         return null;
 
     }
@@ -80,7 +85,7 @@ public class DeleteFishScreen extends AppCompatActivity{
         TextView fishName = findViewById(R.id.searchNameField);
         String[] arg = {fishName.getText().toString()};
         FishEntry fishy = searchNameFish(FishEntry.COLUMN_NAME+"=?", arg);
-        Log.d("Query Result", "Found: "+fishy.getName()+ ", "+fishy.getAmount()+ ", "+fishy.getSpecies());
+        //Log.d("Query Result", "Found: "+fishy.getName()+ ", "+fishy.getAmount()+ ", "+fishy.getSpecies());
         if(fishy != null) {
             TextView fishSpecies = findViewById(R.id.speciesInput);
             TextView amountNum = findViewById(R.id.amountInput);

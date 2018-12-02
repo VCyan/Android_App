@@ -183,6 +183,13 @@ public class DatabaseScreen extends AppCompatActivity implements ExternTables.On
         startActivity(newAct);
     }
 
+    public void openMaps(View view){
+        Intent newAct = new Intent(this, MapsActivity.class); // Cambia la screen a la de databaseScreen
+        //newActivity.putExtra(MESSAGE_ID, value);
+
+        startActivity(newAct);
+    }
+
     public void exportDb(View view){
         Log.d("","Click");
         try {

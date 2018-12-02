@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ModifyFishScreen extends AppCompatActivity{
 
@@ -112,6 +113,10 @@ public class ModifyFishScreen extends AppCompatActivity{
             fishName.setText(name);
             fishSpecies.setText(species);
             amountNum.setText(amount);
+        }
+        else
+        {
+            Toast.makeText(this, "No movie found...", Toast.LENGTH_SHORT);
         }
 
     }
