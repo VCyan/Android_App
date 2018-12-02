@@ -30,5 +30,6 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:onClick="insertLocal"
-        android:text="@string/add" />
+        android:text="@string/add"
+        style="@style/buttonAdd"/>
 </LinearLayout>

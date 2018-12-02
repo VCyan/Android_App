@@ -3,7 +3,7 @@
 
     <string name="app_name">TestApp</string>
     <string name="goButtonName">Click Me</string>
-    <string name="loadDatabaseBtn">Load Database</string>
+    <string name="loadDatabaseBtn">Load DB</string>
     <string name="flyButton" />
     <string name="search">Search</string>
     <string name="go">Go</string>
