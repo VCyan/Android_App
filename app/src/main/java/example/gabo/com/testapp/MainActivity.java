@@ -15,7 +15,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import example.gabo.com.testapp.DatabaseActivity;
 
@@ -75,6 +78,8 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
         UserEntry usr = new UserEntry();
         EditText myText = findViewById(R.id.editText_Username);
         EditText pwd = findViewById(R.id.editText_Password);
+        Button buttonLogin = findViewById(R.id.buttonLogin);
+        TextView attemptTextView = findViewById(R.id.textView_attempt);
 
         usr.setUser(myText.getText().toString());
         usr.setPassword(pwd.getText().toString());
@@ -83,15 +88,21 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
         Cursor cursor = controller.selectUsers(UserEntry.COLUMN_USER+"=? AND "+UserEntry.COLUMN_PASS+"=?", args);
 
         if(cursor!=null && cursor.getCount()>0) {
+            cursor.close();
             Log.d("Login", "Valid");
-
+            Toast.makeText(this,"Username and password is correct",
+                    Toast.LENGTH_SHORT).show();
             Intent newActivity = new Intent(this, LockScreen.class);
-            //String value = ""+myText.getText();
-            //newActivity.putExtra(MESSAGE_ID, value);
             startActivity(newActivity);
 
         }else{
             Log.d("Login", "User not found");
+            Toast.makeText(this,"Username and password is NOT correct",
+                    Toast.LENGTH_SHORT).show();
+            attempt_counter--;
+            attemptTextView.setText(Integer.toString(attempt_counter));
+            if(attempt_counter==0)
+                buttonLogin.setEnabled(false);
         }
     }
 
