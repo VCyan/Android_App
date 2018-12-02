@@ -4,8 +4,8 @@ public class UserEntry {
 
     public static final String TABLE_NAME = "user";
     public static final String COLUMN_ID = "id";
-    public static final String COLUMN_PASS = "pwd";
     public static final String COLUMN_USER = "user";
+    public static final String COLUMN_PASS = "pwd";
 
     private String user;
     private String password;

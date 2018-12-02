@@ -25,7 +25,7 @@
         android:id="@+id/textView3"
         android:layout_width="116dp"
         android:layout_height="wrap_content"
-        android:text="@string/password" />
+        android:text="@string/textView_Pass" />
 
     <EditText
         android:id="@+id/pwdField"
@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="loginAction"
-        android:text="@string/login"
+        android:text="@string/buttonLogin"
         android:textAlignment="viewStart" />
 
     <Button
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="createUser"
-        android:text="@string/createUser" />
+        android:text="@string/buttonSignUp" />
 
     <Button
         android:id="@+id/button12"

@@ -7,7 +7,6 @@ public class FishDBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "movieDatabase";
 
-
     private static final String DESTROY = "DROP TABLE IF EXISTS " + FishEntry.TABLE_NAME;
     private static final String DEST_USER = "DROP TABLE IF EXISTS " + UserEntry.TABLE_NAME;
 
@@ -22,6 +21,12 @@ public class FishDBHelper extends SQLiteOpenHelper {
             UserEntry.COLUMN_USER + " TEXT PRIMARY KEY, " +
             UserEntry.COLUMN_PASS + " TEXT)";
 
+    private static  final String SQL_INSERT_PRELOADED_USER ="INSERT INTO "+UserEntry.TABLE_NAME
+            +" ("+UserEntry.COLUMN_USER+","+UserEntry.COLUMN_PASS+") VALUES ('gabo','gabo')";
+
+    private static  final String SQL_INSERT_PRELOADED_USER2 ="INSERT INTO "+UserEntry.TABLE_NAME
+            +" ("+UserEntry.COLUMN_USER+","+UserEntry.COLUMN_PASS+") VALUES ('victor','asdf')";
+
     private static int DATABASE_VERSION = 6;
 
     public FishDBHelper(Context context){
@@ -32,6 +37,9 @@ public class FishDBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){
         db.execSQL(SQL_CREATE);
         db.execSQL(SQL_CREATE_USERTABLE);
+        //Insert a preloaded registred User...
+        db.execSQL(SQL_INSERT_PRELOADED_USER);
+        db.execSQL(SQL_INSERT_PRELOADED_USER2);
     }
 
     @Override
