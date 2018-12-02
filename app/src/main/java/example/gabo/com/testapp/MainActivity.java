@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
     }
 
     public void createUser(View view){
-
         UserEntry usr = new UserEntry();
         EditText myText = findViewById(R.id.editText_Username);
         EditText pwd = findViewById(R.id.editText_Password);
@@ -70,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
         if(c < 0)
             Log.d("Database", "Error creating user");
         else
-            Log.d("Database App", "Created user: "+c);
+            Log.d("Database", "Created user: "+c);
     }
 
     public void loginAction(View view){
