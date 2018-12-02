@@ -9,7 +9,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:text="TextView" />
+        android:text="@string/textoPrueba" />
 
     <TextView
         android:id="@+id/fishSpecies"
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="TextView" />
+        android:text="@string/textoPrueba" />
 
     <TextView
         android:id="@+id/fishAmount"
@@ -25,14 +25,14 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="TextView" />
+        android:text="@string/textoPrueba" />
 
     <TextView
         android:id="@+id/idrow"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:text="TextView"
+        android:text="@string/textoPrueba"
         android:visibility="gone" />
 
     <Button
@@ -42,7 +42,8 @@
         android:layout_weight="1"
         android:textSize="10sp"
         android:onClick="deleteScreen"
-        android:text="@string/delFish" />
+        android:text="@string/delFish"
+        style="@style/buttonDelete"/>
 
     <Button
         android:id="@+id/button2"
@@ -51,5 +52,6 @@
         android:layout_weight="1"
         android:textSize="10sp"
         android:onClick="modifyScreen"
-        android:text="@string/modify" />
+        android:text="@string/modify"
+        style="@style/buttonModify"/>
 </LinearLayout>

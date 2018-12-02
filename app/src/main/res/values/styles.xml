@@ -13,5 +13,20 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textAllCaps">true</item>
     </style>
+    <style name="buttonDelete" parent="@android:style/Widget.Button">
+        <item name="android:background">@color/colorDelete</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="buttonModify" parent="@android:style/Widget.Button">
+        <item name="android:background">@color/colorModify</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="buttonAdd" parent="@android:style/Widget.Button">
+        <item name="android:background">@color/colorAdd</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
 
 </resources>

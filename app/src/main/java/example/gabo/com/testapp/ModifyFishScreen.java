@@ -99,7 +99,7 @@ public class ModifyFishScreen extends AppCompatActivity{
         String[] arg ={nameToSearch.getText().toString()};
         Log.d("DEBUG,"," arg:"+arg[0]);
         Cursor cursor = controller.selectFishes(FishEntry.COLUMN_NAME+"=?",arg);
-        if(cursor.getCount() > 0) {
+        if(cursor!=null && cursor.getCount()>0) {
             cursor.moveToFirst();
             String name = cursor.getString(cursor.getColumnIndex(FishEntry.COLUMN_NAME));
             String amount = cursor.getString(cursor.getColumnIndex(FishEntry.COLUMN_AMOUNT));
@@ -113,10 +113,14 @@ public class ModifyFishScreen extends AppCompatActivity{
             fishName.setText(name);
             fishSpecies.setText(species);
             amountNum.setText(amount);
+            cursor.close();
         }
         else
         {
-            Toast.makeText(this, "No movie found...", Toast.LENGTH_SHORT);
+            Log.d("DEBUG,"," arg:"+arg[0]+" : WORKING");
+            Toast.makeText(this,"No movie found...",
+                    Toast.LENGTH_SHORT).show();
+            cursor.close();
         }
 
     }
