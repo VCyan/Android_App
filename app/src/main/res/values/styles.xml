@@ -7,5 +7,11 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="buttonMenu" parent="Theme.AppCompat.Light">
+        <item name="buttonBarButtonStyle">@style/Widget.AppCompat.Button.Borderless</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
 
 </resources>

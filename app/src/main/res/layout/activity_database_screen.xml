@@ -14,33 +14,61 @@
 
     </FrameLayout>
 
-    <Button
-        android:id="@+id/button14"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="sendPost"
-        android:text="@string/export" />
+        android:orientation="horizontal"
+        android:weightSum="4">
 
-    <Button
-        android:id="@+id/mapsButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="openMaps"
-        android:text="@string/Maps" />
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="sendPost"
+            android:text="@string/export"
+            android:textSize="12sp"
+            style="@style/buttonMenu"/>
 
-    <Button
-        android:id="@+id/loadButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="loadDatabase"
-        android:text="@string/loadDatabaseBtn" />
+        <Button
+            android:id="@+id/loadButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="loadDatabase"
+            android:text="@string/loadDatabaseBtn"
+            android:textSize="12sp"
+            style="@style/buttonMenu"/>
 
-    <Button
-        android:id="@+id/flyButton"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:onClick="addScreen"
-        android:text="@string/agregar" />
+        <!--<Button-->
+            <!--android:id="@+id/loadButton"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:onClick="loadDatabase"-->
+            <!--android:text="@string/loadDatabaseBtn"-->
+            <!--android:textSize="12sp" />-->
+
+        <Button
+            android:id="@+id/mapsButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="openMaps"
+            android:text="@string/Maps"
+            android:textSize="12sp"
+            style="@style/buttonMenu"/>
+
+        <Button
+            android:id="@+id/flyButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="addScreen"
+            android:text="@string/agregar"
+            android:textSize="12sp"
+            style="@style/buttonMenu"/>
+    </LinearLayout>
 
     <ScrollView
         android:id="@+id/externdata"
