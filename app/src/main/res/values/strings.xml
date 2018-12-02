@@ -1,4 +1,6 @@
 <resources>
+
+
     <string name="app_name">TestApp</string>
     <string name="goButtonName">Click Me</string>
     <string name="loadDatabaseBtn">Load Database</string>
@@ -15,10 +17,20 @@
     <string name="back">Back</string>
     <string name="modifcarButton">Modify</string>
     <string name="delFish">Delete</string>
-    <string name="login">Login</string>
-    <string name="createUser">Create User</string>
-    <string name="password">Password</string>
     <string name="lddb">Load Database</string>
+
+
+
+    <string name="loginPage">Login Page</string>
+    <string name="textView_Username">Username:</string>
+    <string name="editText_Username">Username...</string>
+    <string name="textView_Pass">Password:</string>
+    <string name="editText_Password">Password...</string>
+    <string name="buttonLogin">Login</string>
+    <string name="buttonSignUp">Sign Up</string>
+    <string name="tyrLogin">Intentos Restantes:</string>
+    <string name="tryLeft">5</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

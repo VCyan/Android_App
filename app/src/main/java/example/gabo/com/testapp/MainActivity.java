@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
     public void createUser(View view){
 
         UserEntry usr = new UserEntry();
-        EditText myText = findViewById(R.id.editText);
-        EditText pwd = findViewById(R.id.pwdField);
+        EditText myText = findViewById(R.id.editText_Username);
+        EditText pwd = findViewById(R.id.editText_Password);
         usr.setUser(myText.getText().toString());
         usr.setPassword(pwd.getText().toString());
         Long c = controller.insert(usr);
@@ -72,8 +72,8 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
 
         Log.d("Database App", "Login check");
         UserEntry usr = new UserEntry();
-        EditText myText = (EditText)findViewById(R.id.editText);
-        EditText pwd = findViewById(R.id.pwdField);
+        EditText myText = (EditText)findViewById(R.id.editText_Username);
+        EditText pwd = findViewById(R.id.editText_Password);
         usr.setUser(myText.getText().toString());
         usr.setPassword(pwd.getText().toString());
         String[] args ={usr.getUser(),usr.getPassword()};
