@@ -9,6 +9,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/editText_Location"
         android:inputType="textPersonName" />
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
