@@ -158,13 +158,13 @@ public class DatabaseScreen extends AppCompatActivity implements ExternTables.On
     public void loadMof(){}
 
     public void addScreen(View view){
-        Intent newAct = new Intent(this, AddFishScreen.class); //cambia la screen a la de databaseScreen
+        Intent newAct = new Intent(this, AddFishScreen.class); // Cambia la screen a la de databaseScreen
         //newActivity.putExtra(MESSAGE_ID, value);
         startActivity(newAct);
     }
 
     public void modifyScreen(View view){
-        Intent newAct = new Intent(this, ModifyFishScreen.class); //cambia la screen a la de databaseScreen
+        Intent newAct = new Intent(this, ModifyFishScreen.class); // Cambia la screen a la de databaseScreen
 
         TextView idr = ((View)view.getParent()).findViewById(R.id.idrow);
         //Log.d("Testing", "id:"+idr.getText().toString());
@@ -175,7 +175,7 @@ public class DatabaseScreen extends AppCompatActivity implements ExternTables.On
     }
 
     public void deleteScreen(View view){
-        Intent newAct = new Intent(this, DeleteFishScreen.class); //cambia la screen a la de databaseScreen
+        Intent newAct = new Intent(this, DeleteFishScreen.class); // Cambia la screen a la de databaseScreen
         //newActivity.putExtra(MESSAGE_ID, value);
         TextView idr = ((View)view.getParent()).findViewById(R.id.idrow);
         String idSend = ""+idr.getText();
