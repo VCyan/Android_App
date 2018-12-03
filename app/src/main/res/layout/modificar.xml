@@ -58,7 +58,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchNameField" />
 
-    <TextView
+    <EditText
         android:id="@+id/amountInput"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <TextView
+    <EditText
         android:id="@+id/speciesInput"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
