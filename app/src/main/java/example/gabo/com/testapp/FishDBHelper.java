@@ -23,10 +23,10 @@ public class FishDBHelper extends SQLiteOpenHelper {
             UserEntry.COLUMN_PATTERN + " TEXT)";
 
     private static  final String SQL_INSERT_PRELOADED_USER ="INSERT INTO "+UserEntry.TABLE_NAME
-            +" ("+UserEntry.COLUMN_USER+","+UserEntry.COLUMN_PASS+") VALUES ('gabo','gabo','123')";
+            +" ("+UserEntry.COLUMN_USER+","+UserEntry.COLUMN_PASS+","+UserEntry.COLUMN_PATTERN+") VALUES ('gabo','gabo','123')";
 
     private static  final String SQL_INSERT_PRELOADED_USER2 ="INSERT INTO "+UserEntry.TABLE_NAME
-            +" ("+UserEntry.COLUMN_USER+","+UserEntry.COLUMN_PASS+") VALUES ('victor','asdf','63012')";
+            +" ("+UserEntry.COLUMN_USER+","+UserEntry.COLUMN_PASS+","+UserEntry.COLUMN_PATTERN+") VALUES ('victor','asdf','63012')";
 
     private static int DATABASE_VERSION = 6;
 

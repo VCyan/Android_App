@@ -29,10 +29,10 @@ public class PatternScreen extends AppCompatActivity {
             boolean confirmPattern = true;
             String userToInsert = extras.getString("userToR");
             String passToInsert = extras.getString("passToR");
-            String patternValue = "";
+            String patternValue = "012";
             @Override
             public void onStarted() {
-                Toast.makeText(PatternScreen.this, "Please create a Pattern", Toast.LENGTH_LONG).show();
+                Toast.makeText(PatternScreen.this, "Please create a Pattern", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -45,7 +45,7 @@ public class PatternScreen extends AppCompatActivity {
                 Log.d(getClass().getName(), "Pattern complete: " + PatternLockUtils.patternToString(patternLockView, pattern));
                 if(confirmPattern){
                     patternValue = PatternLockUtils.patternToString(patternLockView, pattern);
-                    Toast.makeText(PatternScreen.this, "Please repeat Pattern", Toast.LENGTH_LONG).show();
+                    Toast.makeText(PatternScreen.this, "Please repeat Pattern", Toast.LENGTH_SHORT).show();
                     confirmPattern = false;
                 }
                 else{
@@ -65,7 +65,7 @@ public class PatternScreen extends AppCompatActivity {
                             PatternScreen.this.finish();
                         }
                     }else{
-                        Toast.makeText(PatternScreen.this, "Incorrect Pattern. Repeat Twice", Toast.LENGTH_LONG).show();
+                        Toast.makeText(PatternScreen.this, "Incorrect Pattern. Repeat Twice", Toast.LENGTH_SHORT).show();
                         confirmPattern = true;
                     }
                 }

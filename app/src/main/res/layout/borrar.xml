@@ -42,12 +42,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchNameField" />
 
-    <EditText
+    <TextView
         android:id="@+id/amountInput"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="@string/textoPrueba"
         android:inputType="number|numberDecimal"
@@ -74,12 +74,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <EditText
+    <TextView
         android:id="@+id/speciesInput"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
         android:ems="10"
         android:hint="@string/textoPrueba"
         android:inputType="textPersonName"

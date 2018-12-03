@@ -4,6 +4,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -90,12 +91,17 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
 
         usr.setUser(myText.getText().toString());
         usr.setPassword(pwd.getText().toString());
-
         String[] args ={usr.getUser(),usr.getPassword()};
         Cursor cursor = controller.selectUsers(UserEntry.COLUMN_USER+"=? AND "+UserEntry.COLUMN_PASS+"=?", args);
 
+
         if(cursor!=null && cursor.getCount()>0) {
+            cursor.moveToFirst();
+            Log.d("DENTRO CURSOR",  DatabaseUtils.dumpCurrentRowToString(cursor));
+//            String a1 = cursor.getString(cursor.getColumnIndex(UserEntry.COLUMN_USER));
+//            String a2 = cursor.getString(cursor.getColumnIndex(UserEntry.COLUMN_PASS));
             String userPattern = cursor.getString(cursor.getColumnIndex(UserEntry.COLUMN_PATTERN));
+//            Log.d("Database App", userPattern);
             cursor.close();
             Log.d("Login", "Valid");
             Toast.makeText(this,"Username and password is correct",
