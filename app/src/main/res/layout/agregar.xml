@@ -28,7 +28,8 @@
         android:onClick="insertFish"
         android:text="@string/add"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        style="@style/buttonAdd"/>
 
     <TextView
         android:id="@+id/textView4"
@@ -48,7 +49,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
         android:ems="10"
-        android:hint="@string/textoPrueba"
+        android:hint="@string/noText"
         android:inputType="textPersonName"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +73,7 @@
         android:layout_marginStart="69dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="@string/textoPrueba"
+        android:hint="@string/noText"
         android:inputType="number|numberDecimal"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/textView5"
@@ -96,7 +97,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="22dp"
         android:ems="10"
-        android:hint="@string/textoPrueba"
+        android:hint="@string/noText"
         android:inputType="textPersonName"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/textView6"

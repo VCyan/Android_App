@@ -32,8 +32,7 @@ public class ModifyFishScreen extends AppCompatActivity{
     }
 
     public void goBack(View view){
-        Intent mainMenu = new Intent(this, DatabaseScreen.class);
-        startActivity(mainMenu);
+        this.finish();
     }
 
 

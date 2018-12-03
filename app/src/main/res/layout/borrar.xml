@@ -10,8 +10,8 @@
         android:id="@+id/text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="72dp"
         android:hint="@string/textoPrueba"
         android:inputType="none"
         android:text="@string/name"
@@ -23,8 +23,8 @@
         android:id="@+id/searchNameField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/textoPrueba"
         android:textSize="24sp"
@@ -42,12 +42,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchNameField" />
 
-    <EditText
+    <TextView
         android:id="@+id/amountInput"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="@string/textoPrueba"
         android:inputType="number|numberDecimal"
@@ -74,12 +74,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <EditText
+    <TextView
         android:id="@+id/speciesInput"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
         android:ems="10"
         android:hint="@string/textoPrueba"
         android:inputType="textPersonName"
@@ -96,7 +96,8 @@
         android:onClick="goBack"
         android:text="@string/back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        style="@style/buttonAdd"/>
 
     <Button
         android:id="@+id/borrarButton"
@@ -107,6 +108,7 @@
         android:onClick="deleteFish"
         android:text="@string/borrar"
         app:layout_constraintStart_toEndOf="@+id/button9"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        style="@style/buttonDelete"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -6,10 +6,20 @@ public class UserEntry {
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_USER = "user";
     public static final String COLUMN_PASS = "pwd";
+    public static final String COLUMN_PATTERN = "pattern";
 
     private String user;
     private String password;
+    private String pattern;
     private int id;
+
+    public String getPattern() {
+        return pattern;
+    }
+
+    public void setPattern(String pattern) {
+        this.pattern = pattern;
+    }
 
     public String getUser() {
         return user;

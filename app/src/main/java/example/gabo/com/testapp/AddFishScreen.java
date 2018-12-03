@@ -98,8 +98,7 @@ public class AddFishScreen extends AppCompatActivity {
     }
 
     public void goBack(View view){
-        Intent mainMenu = new Intent(this, DatabaseScreen.class);
-        startActivity(mainMenu);
+        this.finish();
     }
 
     public void insertInDb(View view)

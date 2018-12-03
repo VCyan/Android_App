@@ -164,7 +164,8 @@ public class ExternTables extends Fragment {
     * */
     this.activity = activity;
         try{
-            URL url =  new URL("https", "api.themoviedb.org", 443, "/3/search/movie?api_key=b33a3f6a319f7329e9aef66430525ec2&query=Hunger+Games" );
+//            URL url =  new URL("https", "api.themoviedb.org", 443, "/3/search/movie?api_key=b33a3f6a319f7329e9aef66430525ec2&query=Hunger+Games" );
+            URL url =  new URL("https", "api.themoviedb.org", 443, "/3/discover/movie?api_key=b33a3f6a319f7329e9aef66430525ec2&sort_by=popularity.desc" );
 
             new ExternTables.DownloadMovieData().execute(url);
         }catch (MalformedURLException mue){

@@ -40,6 +40,7 @@ public class FishDatabaseController {
         ContentValues values = new ContentValues();
         values.put(UserEntry.COLUMN_USER, user.getUser());
         values.put(UserEntry.COLUMN_PASS, user.getPassword());
+        values.put(UserEntry.COLUMN_PATTERN, user.getPattern());
 
         long inserted = db.insert(UserEntry.TABLE_NAME , null, values);
         return inserted;
@@ -59,7 +60,8 @@ public class FishDatabaseController {
         String columns[] = {
                 //UserEntry.COLUMN_ID,
                 UserEntry.COLUMN_USER,
-                UserEntry.COLUMN_PASS
+                UserEntry.COLUMN_PASS,
+                UserEntry.COLUMN_PATTERN
         };
         Cursor cursor = db.query(UserEntry.TABLE_NAME, columns,selection, selectionArgs, null, null,null);
 

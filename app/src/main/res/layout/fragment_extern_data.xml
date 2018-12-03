@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="loadData"
-        android:text="@string/loadDatabaseBtn" />
+        android:text="@string/loadDatabaseBtn"
+        style="@style/buttonMenu1"/>
 
     <LinearLayout
         android:layout_width="match_parent"
