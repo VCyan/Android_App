@@ -27,7 +27,8 @@
             android:layout_marginStart="6dp"
             android:layout_weight="1"
             android:onClick="searchPlace"
-            android:text="@string/movies" />
+            android:text="@string/movies"
+            style="@style/buttonModify"/>
 
         <Button
             android:id="@+id/search_button"
@@ -36,7 +37,8 @@
             android:layout_marginEnd="0dp"
             android:layout_weight="1"
             android:onClick="searchPlace"
-            android:text="@android:string/search_go" />
+            android:text="@android:string/search_go"
+            style="@style/buttonAdd"/>
     </LinearLayout>
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
