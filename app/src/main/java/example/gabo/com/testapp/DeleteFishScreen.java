@@ -36,8 +36,7 @@ public class DeleteFishScreen extends AppCompatActivity{
     }
 
     public void goBack(View view){
-        Intent mainMenu = new Intent(this, DatabaseScreen.class);
-        startActivity(mainMenu);
+        this.finish();
     }
 
     public void deleteFish(View view){

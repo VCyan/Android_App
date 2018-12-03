@@ -61,11 +61,12 @@ public class PatternScreen extends AppCompatActivity {
                         }
                         else {
                             Log.d("Database", "Created user: " + c);
-                            Toast.makeText(PatternScreen.this, "User already registered...", Toast.LENGTH_LONG).show();
+                            Toast.makeText(PatternScreen.this, "User already registered...", Toast.LENGTH_SHORT).show();
                             PatternScreen.this.finish();
                         }
                     }else{
                         Toast.makeText(PatternScreen.this, "Incorrect Pattern. Repeat Twice", Toast.LENGTH_SHORT).show();
+                        patternValue = "";
                         confirmPattern = true;
                     }
                 }
