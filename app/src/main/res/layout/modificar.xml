@@ -25,8 +25,8 @@
         android:id="@+id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="68dp"
         android:hint="@string/textoPrueba"
         android:inputType="none"
         android:text="@string/name"
@@ -38,7 +38,7 @@
         android:id="@+id/searchNameField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/textoPrueba"
@@ -104,7 +104,8 @@
         android:onClick="goBack"
         android:text="@string/back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        style="@style/buttonDelete"/>
 
     <Button
         android:id="@+id/button3"
@@ -115,7 +116,8 @@
         android:onClick="searchNameFish"
         android:text="@string/search"
         app:layout_constraintStart_toEndOf="@+id/button7"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        style="@style/buttonAdd"/>
 
     <Button
         android:id="@+id/modiButton"
@@ -126,7 +128,8 @@
         android:onClick="modifyFish"
         android:text="@string/modify"
         app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        style="@style/buttonModify"/>
 
 </android.support.constraint.ConstraintLayout>
 

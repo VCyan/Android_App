@@ -1,8 +1,10 @@
 package example.gabo.com.testapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -45,11 +47,32 @@ public class DeleteFishScreen extends AppCompatActivity{
         Log.d("DEBUG,"," arg:"+arg[0]);
         FishEntry fish = new FishEntry();
         fish.setName(nameToSearch.getText().toString());
-        FishEntry fish2 = searchNameFish(FishEntry.COLUMN_NAME+"=?", arg);
+        final FishEntry fish2 = searchNameFish(FishEntry.COLUMN_NAME+"=?", arg);
         if(fish2 != null){
-            long deletion = controller.delete(fish2);
-            Log.d("Database", "Deleted: "+deletion);
-            goBack(view);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setCancelable(true);
+            builder.setTitle("Warning");
+            builder.setMessage("Are you sure to delete this movie?");
+            builder.setPositiveButton("Confirm",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        long deletion = controller.delete(fish2);
+                        Log.d("Database", "Deleted: "+deletion);
+                        goBack(null);
+                    }
+                });
+            builder.setNegativeButton("Cancel",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    
+                    }
+                });
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
+
         }
     }
 
@@ -76,7 +99,6 @@ public class DeleteFishScreen extends AppCompatActivity{
             Toast.makeText(this, "No movie found...", Toast.LENGTH_SHORT);
         }
         return null;
-
     }
 
     public void displayFish(View view){

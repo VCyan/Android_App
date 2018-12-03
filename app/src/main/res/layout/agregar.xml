@@ -28,7 +28,8 @@
         android:onClick="insertFish"
         android:text="@string/add"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        style="@style/buttonAdd"/>
 
     <TextView
         android:id="@+id/textView4"

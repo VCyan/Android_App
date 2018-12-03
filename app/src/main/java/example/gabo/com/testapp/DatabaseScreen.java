@@ -140,6 +140,8 @@ public class DatabaseScreen extends AppCompatActivity implements ExternTables.On
     @Override
     protected void onResume() {
         super.onResume();
+//        loadData(null);
+        loadDatabase(null);
         sensorManager.registerListener(gyroEventListener, gyroSensor, SensorManager.SENSOR_DELAY_FASTEST);
     }
 
@@ -235,6 +237,7 @@ public class DatabaseScreen extends AppCompatActivity implements ExternTables.On
                     doNotification(conn.getResponseMessage());
                 } catch (Exception e) {
                     e.printStackTrace();
+                    doNotification("ERROR");
                 }
             }
         });
@@ -372,6 +375,7 @@ public class DatabaseScreen extends AppCompatActivity implements ExternTables.On
 
     public void insertLocal(View view){
         externTable.insertExternal(this, view);
+        loadDatabase(null);
     }
 
 
