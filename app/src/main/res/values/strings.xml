@@ -1,7 +1,5 @@
 <resources>
-
-
-    <string name="app_name">TestApp</string>
+    <string name="app_name">Fly-Vic App</string>
     <string name="goButtonName">Click Me</string>
     <string name="loadDatabaseBtn">Load DB</string>
     <string name="flyButton" />

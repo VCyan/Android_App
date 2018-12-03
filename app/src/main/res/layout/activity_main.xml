@@ -13,14 +13,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/loginPage"
-        android:textColor="@color/colorAdd"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/editText_Username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.566" />
+        app:layout_constraintVertical_bias="0.566"
+        android:textColor="@color/colorPrimaryDark"/>
 
     <TextView
         android:id="@+id/textView_Username"
@@ -32,7 +32,8 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/editText_Username"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editText_Username" />
+        app:layout_constraintTop_toTopOf="@+id/editText_Username"
+        style="@style/textColor"/>
 
     <EditText
         android:id="@+id/editText_Username"
@@ -60,7 +61,8 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/editText_Password"
         app:layout_constraintEnd_toStartOf="@+id/editText_Password"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/textColor"/>
 
     <EditText
         android:id="@+id/editText_Password"
@@ -84,7 +86,8 @@
         android:text="@string/tryLogin"
         android:textSize="20sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView_attempt"
-        app:layout_constraintEnd_toStartOf="@+id/textView_attempt" />
+        app:layout_constraintEnd_toStartOf="@+id/textView_attempt"
+        style="@style/textColor"/>
 
     <TextView
         android:id="@+id/textView_attempt"
@@ -96,7 +99,8 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
+        android:textColor="@color/colorPrimary"/>
 
     <Button
         android:id="@+id/buttonLogin"
@@ -110,7 +114,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView_attempt"
         app:layout_constraintStart_toStartOf="@+id/editText_Password"
         app:layout_constraintTop_toBottomOf="@+id/editText_Password"
-        style="@style/buttonAdd"/>
+        style="@style/buttonLogin"/>
 
     <Button
         android:id="@+id/buttonSignUp"

@@ -40,7 +40,8 @@
         android:text="@string/name"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/textColor"/>
 
     <EditText
         android:id="@+id/nameInput"
@@ -64,7 +65,8 @@
         android:text="@string/amount"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameInput" />
+        app:layout_constraintTop_toBottomOf="@+id/nameInput"
+        style="@style/textColor"/>
 
     <EditText
         android:id="@+id/amountInput"
@@ -88,7 +90,8 @@
         android:text="@string/species"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        style="@style/textColor"/>
 
     <EditText
         android:id="@+id/speciesInput"
