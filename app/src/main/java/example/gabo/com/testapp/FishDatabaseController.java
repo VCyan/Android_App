@@ -59,7 +59,8 @@ public class FishDatabaseController {
         String columns[] = {
                 //UserEntry.COLUMN_ID,
                 UserEntry.COLUMN_USER,
-                UserEntry.COLUMN_PASS
+                UserEntry.COLUMN_PASS,
+                UserEntry.COLUMN_PATTERN
         };
         Cursor cursor = db.query(UserEntry.TABLE_NAME, columns,selection, selectionArgs, null, null,null);
 

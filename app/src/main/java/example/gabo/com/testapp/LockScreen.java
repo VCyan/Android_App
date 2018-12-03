@@ -19,7 +19,7 @@ public class LockScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pattern_screen);
         final PatternLockView patternLockView = findViewById(R.id.patternView);
-
+        final Bundle extras = getIntent().getExtras();
         patternLockView.addPatternLockListener(new PatternLockViewListener() {
             @Override
             public void onStarted() {
@@ -33,8 +33,9 @@ public class LockScreen extends AppCompatActivity {
 
             @Override
             public void onComplete(List pattern) {
+                final String myPattern = extras.getString("patternToR");
                 Log.d(getClass().getName(), "Pattern complete: " + PatternLockUtils.patternToString(patternLockView, pattern));
-                if(PatternLockUtils.patternToString(patternLockView, pattern).equalsIgnoreCase("123")){
+                if(PatternLockUtils.patternToString(patternLockView, pattern).equalsIgnoreCase( myPattern )){
                     Toast.makeText(LockScreen.this, "Welcome back!", Toast.LENGTH_LONG).show();
                     openApp();
                 }else{

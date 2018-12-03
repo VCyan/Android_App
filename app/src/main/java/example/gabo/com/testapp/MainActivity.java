@@ -60,16 +60,24 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
     }
 
     public void createUser(View view){
-        UserEntry usr = new UserEntry();
+//        UserEntry usr = new UserEntry();
         EditText myText = findViewById(R.id.editText_Username);
         EditText pwd = findViewById(R.id.editText_Password);
-        usr.setUser(myText.getText().toString());
-        usr.setPassword(pwd.getText().toString());
-        Long c = controller.insert(usr);
-        if(c < 0)
-            Log.d("Database", "Error creating user");
-        else
-            Log.d("Database", "Created user: "+c);
+
+        Bundle extras = new Bundle();
+        extras.putString("userToR",myText.getText().toString());
+        extras.putString("passToR",pwd.getText().toString());
+//        usr.setUser(myText.getText().toString());
+//        usr.setPassword(pwd.getText().toString());
+
+//        Long c = controller.insert(usr);
+//        if(c < 0)
+//            Log.d("Database", "Error creating user");
+//        else
+//            Log.d("Database", "Created user: "+c);
+        Intent newActivity = new Intent(this, PatternScreen.class);
+        newActivity.putExtras(extras);
+        startActivity(newActivity);
     }
 
     public void loginAction(View view){
@@ -87,11 +95,17 @@ public class MainActivity extends AppCompatActivity implements MenuFragment.OnFr
         Cursor cursor = controller.selectUsers(UserEntry.COLUMN_USER+"=? AND "+UserEntry.COLUMN_PASS+"=?", args);
 
         if(cursor!=null && cursor.getCount()>0) {
+            String userPattern = cursor.getString(cursor.getColumnIndex(UserEntry.COLUMN_PATTERN));
             cursor.close();
             Log.d("Login", "Valid");
             Toast.makeText(this,"Username and password is correct",
                     Toast.LENGTH_SHORT).show();
+
+            Bundle extras = new Bundle();
+            extras.putString("patternToR",userPattern);
+
             Intent newActivity = new Intent(this, LockScreen.class);
+            newActivity.putExtras(extras);
             startActivity(newActivity);
 
         }else{

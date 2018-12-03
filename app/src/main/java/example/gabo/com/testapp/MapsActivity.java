@@ -150,7 +150,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             nearbyPlaces.execute(transferData);
             Toast.makeText(this, "Searching for cinemas...",Toast.LENGTH_SHORT);
             Toast.makeText(this, "Showing nearby cinemas...",Toast.LENGTH_SHORT);
-
         }
 
     }
